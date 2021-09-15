@@ -1,0 +1,26 @@
+def getVal()
+    loop do
+        getVal = $stdin.gets.chomp
+        return getVal if getVal =~ /^\d+$/
+            puts '半角数字で入力してください'
+    end
+end
+
+
+puts '三角形の１つ目の角度を入力してください。'
+
+firstAngle = getVal()
+
+puts '三角形の2つ目の角度を入力してください。'
+
+secondAngle = getVal()
+
+sumAngle = firstAngle.to_i + secondAngle.to_i
+p sumAngle
+
+if sumAngle > 180
+    puts '2つの角度の和が180より小さくなるように設定してください。'
+else
+    thirdAngle = 180 - sumAngle
+    puts "三角形の残り１つの角度は#{thirdAngle}度です"
+end
