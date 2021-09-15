@@ -1,0 +1,45 @@
+<html lang="ja">
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" type="text/css" href="stylesheet.css">
+    <title>猫時計</title>
+    <script>
+      function updateClock() {
+        var now = new Date();
+        var hour = now.getHours();
+        var minute = now.getMinutes();
+        var second = now.getSeconds();
+        if ( hour < 10 ) hour = "0" + hour;
+        if ( minute < 10 ) minute = "0" + minute;
+        if ( second < 10 ) second = "0" + second;
+        document.getElementById('myClock').innerHTML = hour+":"+minute+":"+second;
+
+        var imgCat = "cat/cat" + hour + ".PNG";
+        document.getElementById('myCat').innerHTML = "<img src=" + imgCat + " height=80>";
+
+        var imgHand = "hand/hand" + hour + ".PNG";
+        document.getElementById('myHand').innerHTML = "<img src=" + imgHand + " height=40>";
+    }      
+
+    function start() {
+        setInterval("updateClock();", 1000);
+        updateClock();
+      }
+
+    </script>
+  </head>
+
+  <body onload="start();"
+    <div align="center">
+        <table><tr><td valign="bottom">
+            <div id="myHand" class="blinking delay hand"></div>
+        </td><td valign="bottom">
+            <div id="myClock"
+                style="font:bold 40pt Times New Roman; color:#444;">
+            </div>
+        </td><td>
+            <div id="myCat" class="cat"></div>
+        </td></tr></table>
+    </div>
+</body>
+</html>
