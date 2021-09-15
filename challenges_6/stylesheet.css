@@ -1,0 +1,26 @@
+.cat {
+  margin: 0 0 10 20;
+}
+
+.hand {
+  margin: 0 10 10 0;
+}
+.blinking {
+    animation: blink 4s infinite;
+  }
+  .delay {
+    animation-delay: 100;
+  }
+  @keyframes blink {
+    0% {
+      opacity: 1;
+    }      
+    20% {
+      opacity: 0;
+    }
+    80% {
+        opacity: 0;
+      }
+    90% {
+        opacity: 1;
+    }
